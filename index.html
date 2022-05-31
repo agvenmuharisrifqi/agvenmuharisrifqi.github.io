@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agven Muharis Rifqi - Portofolio</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="dist/img/mylogo.png">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/69f952805c.js" crossorigin="anonymous"></script>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="dist/css/style.css">
+    <style type="text/css">
+        .img-klien img {
+            height: 50px;
+            filter: grayscale(100);
+            transition: all .4s ease-in-out;
+        }
+
+        .img-klien:hover img {
+            filter: none;
+            transform: scale(1.15);
+        }
+
+        .nav-item {
+            position: relative;
+            color: #4b5563;
+        }
+
+        .nav-item.active::after {
+            content: "";
+            position: absolute;
+            bottom: -.5rem;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            border-radius: .5rem;
+            background-color: #4D77FF;
+        }
+
+        .nav-item:hover::after {
+            content: "";
+            position: absolute;
+            bottom: -.5rem;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            border-radius: .5rem;
+            background-color: #4D77FF;
+            animation: animateNav .5s;
+        }
+
+        @keyframes animateNav {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .nav-toggle.active~.nav-lists {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 1000;
+            background-color: #0E185F;
+            transition: all 1s;
+            animation: navActive 1s;
+        }
+
+        @keyframes navActive {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .nav-toggle.active~.nav-lists .nav-item {
+            color: white;
+        }
+
+        nav {
+            background-color: transparent;
+            transition: all 1s;
+            /* box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, .2); */
+        }
+
+        nav.bg-dark {
+            box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, .2);
+        }
+
+        nav.bg-dark .nav-brand {
+            color: white;
+        }
+
+        /* .navfix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, .5);
+            backdrop-filter: blur(10px);
+            box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, .2);
+        } */
+    </style>
+</head>
+
+<body class="bg-primary text-sm sm:text-base">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="">
+        <div class="px-4 py-4 sm:container flex justify-between md:justify-start">
+            <a href="" class="nav-brand">Agven MR</a>
+            <div id="nav_toggle" class="nav-toggle md:hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="hidden nav-lists md:flex">
+                <li class="mr-10 nav-item">
+                    <a class="" href="#beranda">Beranda</a>
+                </li>
+                <li class="mr-10 nav-item">
+                    <a href="#tentang">Tentang</a>
+                </li>
+                <li class="mr-10 nav-item">
+                    <a href="#portofolio">Portofolio</a>
+                </li>
+                <li class="mr-10 nav-item">
+                    <a href="#klien">Klien</a>
+                </li>
+                <li class="mr-10 nav-item">
+                    <a href="#kontak">Kontak</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="beranda" class="px-4 py-10 relative sm:container md:py-24">
+        <div class="px-4 py-8 rounded-lg lg:py-10"
+            style="border: 1px solid rgba(255,255,255,1);background-color: rgba(255,255,255,.5); backdrop-filter: blur(10px);">
+            <div class="font-title">
+                <h1 class="hero-title w-[234px] xs:w-[281px] md:w-[351px]">
+                    <span data-text="Halo, Saya Agven MR.">Halo, Saya Agven MR.</span>
+                </h1>
+                <h1 class="hero-title w-[236px] xs:w-[283px] md:w-[354px]">
+                    <span data-text="Seorang Programmer.">Seorang Programmer.</span>
+                </h1>
+            </div>
+            <div class="md:w-2/4">
+                <p class="mt-4 mb-8">
+                    Menyelesaikan permasalahan dengan
+                    <strong class="text-bold">CODING</strong>
+                    adalah suatu <strong class="text-bold">KESENANGAN</strong>
+                    tersendiri untuk <strong class="text-bold">SAYA.</strong>
+                </p>
+                <a href="#" class="button">Hubungi Saya</a>
+            </div>
+            <img class="hidden md:block md:absolute md:-bottom-20 md:right-0 md:w-72 lg:w-96 lg:-bottom-24"
+                src="dist/img/profile.png" alt="">
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="tentang" class="p-4 sm:container md:mt-8">
+        <div class="font-title flex items-center coba">
+            <div class="effect-title"></div>
+            <h2 class="general-title active relative text-dark text-xl xs:text-2xl md:text-3xl">Tentang</h2>
+        </div>
+        <div class="mt-4 flex flex-col md:flex-row gap-4">
+            <p>
+                Saya <strong class="text-bold">Agven Muharis Rifqi</strong> merupakan seorang <strong
+                    class="text-bold">Web
+                    Programmer</strong>
+            </p>
+            <p>
+                Halo
+            </p>
+        </div>
+    </div>
+
+    <!-- Portofolio Section -->
+    <div id="portofolio" class="py-6">
+        <div class="p-4 sm:container md:mt-8">
+            <div class="font-title flex items-center coba">
+                <div class="effect-title"></div>
+                <h2 class="general-title relative text-dark text-xl xs:text-2xl md:text-3xl">Portofolio</h2>
+            </div>
+            <div class="mt-4 grid gap-4 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+                <div class="bg-white w-full shadow-md shadow-gray-300 rounded">
+                    <img src="dist/img/app/adhitya-asha-medika.png" alt="">
+                    <div class="p-4">
+                        <span class="text-gray-500">Maret 2022</span>
+                        <div class="py-1 flex flex-wrap">
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                Wordpress Custom Theme
+                            </div>
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                Bootstrap
+                            </div>
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                MySQL
+                            </div>
+                        </div>
+                        <a href="https://www.adhityaashamedika.co.id/" class="text-link block text-lg font-bold"
+                            target="_blank">
+                            Company Profile
+                        </a>
+                        <p>Saya membuat website portofolio untuk </p>
+                        <a href="https://www.adhityaashamedika.co.id/" class="text-link" target="_blank">
+                            visit website&hellip;
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white w-full shadow-md shadow-gray-300 rounded">
+                    <img src="dist/img/app/calculator.png" alt="">
+                    <div class="p-4">
+                        <span class="text-gray-500">Maret 2022</span>
+                        <div class="py-1 flex flex-wrap">
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                Javascript DOM
+                            </div>
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                Github Pages
+                            </div>
+                        </div>
+                        <a href="https://agvenmuharisrifqi.github.io/Calculator/"
+                            class="text-link block text-lg font-bold" target="_blank">
+                            Website Calculator
+                        </a>
+                        <p>Saya membuat website portofolio untuk </p>
+                        <a href="https://agvenmuharisrifqi.github.io/Calculator/" class="text-link" target="_blank">
+                            visit website&hellip;
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white w-full shadow-md shadow-gray-300 rounded">
+                    <img src="dist/img/app/warehouse-app.png" alt="">
+                    <div class="p-4">
+                        <span class="text-gray-500">April 2022</span>
+                        <div class="py-1 flex flex-wrap">
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                Django
+                            </div>
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                Bootstrap
+                            </div>
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                PostgreSQL
+                            </div>
+                            <div class="text-sm text-red mr-2">
+                                <i class="text-xs fa-solid fa-hashtag"></i>
+                                Heroku
+                            </div>
+                        </div>
+                        <a href="https://django-warehouse.herokuapp.com/" class="text-link block text-lg font-bold"
+                            target="_blank">
+                            Warehouse Web App
+                        </a>
+                        <p>Saya membuat website portofolio untuk </p>
+                        <a href="https://django-warehouse.herokuapp.com/" class="text-link" target="_blank">
+                            visit website&hellip;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Klien Section -->
+    <div id="klien" class="px-4 py-5 sm:container md:mt-8">
+        <div class="font-title flex items-center coba">
+            <div class="effect-title"></div>
+            <h2 class="general-title relative text-dark text-xl xs:text-2xl md:text-3xl">Klien</h2>
+        </div>
+        <div class="mt-4 flex justify-between">
+            <div class="img-klien my-5">
+                <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
+            </div>
+            <div class="img-klien my-5">
+                <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
+            </div>
+            <div class="img-klien my-5">
+                <img src="dist/img/logo-AAM.png" alt="Adhitya Asha Medika">
+            </div>
+            <div class="img-klien my-5">
+                <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
+            </div>
+            <div class="img-klien my-5">
+                <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontak Section -->
+    <div id="kontak" class="bg-white py-12">
+        <div class="p-4 sm:container">
+            <div class="font-title flex items-center coba">
+                <div class="effect-title"></div>
+                <h2 class="general-title white relative text-dark text-xl xs:text-2xl md:text-3xl">Kontak</h2>
+            </div>
+            <div class="flex justify-between flex-col md:flex-row">
+                <div class="my-5 w-full md:flex-auto">
+                    <strong>Anda dapat menghubungi di sosial media saya</strong>
+                    <ul>
+                        <li class="flex items-center gap-4 my-2">
+                            <div class="px-3 py-2 button">
+                                <i class="text-2xl fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:agven25@gmail.com" class="block text-link">Agven25@gmail.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 my-2">
+                            <div class="px-3 py-2 button">
+                                <i class="text-2xl fa-brands fa-facebook-square"></i>
+                            </div>
+                            <div>
+                                <strong>Facebook</strong>
+                                <a href="https://www.facebook.com/agvenmuharisrifqi"
+                                    class="block text-link">agvenmuharisrifqi</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 my-2">
+                            <div class="px-3 py-2 button">
+                                <i class="text-2xl fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <strong>Instagram</strong>
+                                <a href="https://www.instagram.com/agvenmuharisrifqi/"
+                                    class="block text-link">agvenmuharisrifqi</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 my-2">
+                            <div class="px-3 py-2 button">
+                                <i class="text-2xl fa-brands fa-github-square"></i>
+                            </div>
+                            <div>
+                                <strong>Github</strong>
+                                <a href="https://github.com/agvenmuharisrifqi"
+                                    class="block text-link">agvenmuharisrifqi</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 my-2">
+                            <div class="px-3 py-2 button">
+                                <i class="text-2xl fa-brands fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <strong>Linked In</strong>
+                                <a href="https://www.linkedin.com/in/agven-muharis-rifqi-0008b81a0/"
+                                    class="block text-link">agven-muharis-rifqi-0008b81a0</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <form id="form-email" class="my-5 w-full md:flex-auto">
+                    <h3><strong>- atau -</strong></h3>
+                    <div class="my-3">
+                        <label for="user-name" class="">Nama <span class="text-red">*</span></label>
+                        <input type="text" id="user-name" placeholder="Nama Anda" autocomplete="off" required
+                            class="text-black block w-full outline-none mt-1 p-2  border border-gray rounded focus:outline-none focus:border-link focus:shadow-sm focus:shadow-link">
+                        <span class="text-red text-xs hidden" error-input data-null="Tidak boleh kosong"></span>
+                    </div>
+                    <div class="my-3">
+                        <label for="user-email" class="">Email <span class="text-red">*</span></label>
+                        <input type="email" id="user-email" placeholder="Email Anda" autocomplete="off" required
+                            class="text-black block w-full outline-none mt-1 p-2  border border-gray rounded focus:outline-none focus:border-link focus:shadow-sm focus:shadow-link">
+                        <span class="text-red text-xs hidden" error-input data-null="Tidak boleh kosong"
+                            data-error="Tolong masukan alamat email yang benar"></span>
+                    </div>
+                    <div class="my-3">
+                        <label for="user-subject" class="">Keperluan <span class="text-red">*</span></label>
+                        <input type="text" id="user-subject" placeholder="Keperluan Anda" autocomplete="off" required
+                            class="text-black block w-full outline-none mt-1 p-2  border border-gray rounded focus:outline-none focus:border-link focus:shadow-sm focus:shadow-link">
+                        <span class="text-red text-xs hidden" error-input data-null="Tidak boleh kosong"></span>
+                    </div>
+                    <button type="submit" id="submit-form" class="w-full button-full">
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="bg-slate-800">
+        <div class="p-4 sm:container">
+            <p class="text-center text-white">
+                Created By Agven Muharis Rifqi
+            </p>
+        </div>
+    </div>
+
+    <!-- Alert Email -->
+    <div id="alert-email" class="hidden fixed py-4 px-2 bottom-8 right-0 md:right-4 rounded">
+
+    </div>
+
+    <!-- Script JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // User Language
+        const userLang = navigator.language || navigator.userLanguage;
+        document.querySelector("html").setAttribute("lang", userLang.substr(0, 2));
+
+        // Animation Title
+        const effectTitle = () => {
+            const allTitle = [...document.getElementsByClassName("general-title")];
+            allTitle.forEach(elem => {
+                let elemPosition = elem.getBoundingClientRect().top;
+                let sizeWindow = window.innerHeight;
+                if (elemPosition < sizeWindow) {
+                    elem.classList.add("active")
+                } else {
+                    elem.classList.remove("active")
+                }
+            })
+        }
+
+        // Send Mail
+        (function () {
+            emailjs.init("zwjrAOYDqvPzguXSz");
+        })();
+
+        const successInfo = "Pesan berhasil dikirim, saya akan segera membalas email anda.";
+        const errorInfo = "Pesan tidak berhasil dikirim, silahkan coba lagi.";
+        const elemAlert = document.getElementById("alert-email");
+        const serviceID = "service_ps2xz6m";
+        const templateID = "template_hh1u4j7";
+        const email = {
+            message: document.getElementById("user-subject").value, // Message Email
+            from: document.getElementById("user-name").value, // From Name
+            from_email: document.getElementById("user-email").value // Email Dari Siapa
+        }
+
+        const submit = document.getElementById("submit-form");
+        submit.addEventListener("click", (e) => {
+            e.preventDefault();
+            let check = checkInput();
+            if (!check.includes(false)) {
+                emailjs.send(serviceID, templateID, email)
+                    .then(function (success) {
+                        elemAlert.innerHTML = successInfo;
+                        elemAlert.classList.add("bg-green-300");
+                    }, function (error) {
+                        elemAlert.innerHTML = errorInfo;
+                        elemAlert.classList.add("bg-red-300");
+                    })
+                elemAlert.classList.remove("hidden");
+            }
+        })
+        if (elemAlert.innerHTML) {
+            setInterval(() => {
+                elemAlert.classList.add("hidden")
+            }, 5000);
+        }
+
+        function checkInput() {
+            let status = []
+            const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                inputAll = [...document.querySelectorAll("input")],
+                inputAlert = document.querySelectorAll("[error-input]");
+            inputAll.forEach((elem, index) => {
+                let value = elem.value;
+                if (value == "") {
+                    inputAlert[index].classList.remove("hidden");
+                    inputAlert[index].innerHTML = inputAlert[index].getAttribute("data-null");
+                    status.push(false);
+                } else if (elem.type === "email" && !value.match(reg)) {
+                    inputAlert[index].classList.remove("hidden");
+                    inputAlert[index].innerHTML = inputAlert[index].getAttribute("data-error");
+                    status.push(false);
+                } else {
+                    inputAlert[index].classList.add("hidden");
+                    inputAlert[index].innerHTML = "";
+                    status.push(true);
+                }
+            })
+            return status;
+        }
+
+        // Navigation
+        const allNav = [...document.querySelectorAll(".nav-item")]
+        allNav.forEach(elem => {
+            elem.addEventListener("click", () => {
+                elem.classList.toggle("active");
+                elem.classList.contains
+            })
+        });
+
+        // Toggle Navigation
+        const toggleNav = document.getElementById("nav_toggle");
+        toggleNav.addEventListener("click", (e) => {
+            toggleNav.parentElement.parentElement.classList.toggle("bg-dark");
+            toggleNav.classList.toggle("active")
+            let toggle = [...document.querySelectorAll(".nav-toggle span")];
+            toggle.forEach(elem => {
+                if (elem.classList.contains("active")) {
+                    elem.classList.remove("active");
+                    elem.classList.add("nonactive");
+                } else {
+                    elem.classList.remove("nonactive");
+                    elem.classList.add("active");
+                }
+            })
+        });
+
+        // Nav On Scroll
+        const navbar = document.getElementById("navbar");
+        const navScroll = () => {
+            if (window.pageYOffset > navbar.offsetTop) {
+                navbar.classList.add("navfix")
+            } else {
+                navbar.classList.remove("navfix")
+            }
+        }
+
+
+        // window.onresize = () => {
+        //     if (window.innerWidth > 768) {
+        //         toggleNav.classList.remove("active")
+        //     }
+        // }
+
+        window.onscroll = () => {
+            effectTitle();
+            navScroll();
+        }
+    </script>
+</body>
+
+</html>
