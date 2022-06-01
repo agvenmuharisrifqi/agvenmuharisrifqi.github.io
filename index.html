@@ -66,17 +66,23 @@
             }
         }
 
+        .nav-brand,
+        .nav-toggle {
+            z-index: 901;
+        }
+
         .nav-toggle.active~.nav-lists {
             position: fixed;
-            top: 60px;
+            top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
+            height: 100vh;
+            width: 100vw;
             display: flex;
+            padding-top: 60px;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            z-index: 1000;
+            z-index: 900;
             background-color: #0E185F;
             transition: all 1s;
             animation: navActive 1s;
@@ -96,47 +102,30 @@
             color: white;
         }
 
-        nav {
-            background-color: transparent;
-            transition: all 1s;
-            /* box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, .2); */
-        }
-
-        nav.bg-dark {
-            box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, .2);
-        }
-
-        nav.bg-dark .nav-brand {
-            color: white;
-        }
-
-        /* .navfix {
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, .5);
-            backdrop-filter: blur(10px);
-            box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, .2);
-        } */
+        }
     </style>
 </head>
 
 <body class="bg-primary text-sm sm:text-base">
 
     <!-- Navigation -->
-    <nav id="navbar" class="">
-        <div class="px-4 py-4 sm:container flex justify-between md:justify-start">
-            <a href="" class="nav-brand">Agven MR</a>
+    <nav id="navbar" class="navbar">
+        <div class="relative px-4 py-4 sm:container flex justify-between md:justify-start">
+            <a href="" class="nav-brand text-dark">Agven MR</a>
             <div id="nav_toggle" class="nav-toggle md:hidden">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul class="hidden nav-lists md:flex">
+            <ul class="nav-lists">
                 <li class="mr-10 nav-item">
-                    <a class="" href="#beranda">Beranda</a>
+                    <a href="#beranda">Beranda</a>
                 </li>
                 <li class="mr-10 nav-item">
                     <a href="#tentang">Tentang</a>
@@ -155,52 +144,56 @@
     </nav>
 
     <!-- Hero Section -->
-    <div id="beranda" class="px-4 py-10 relative sm:container md:py-24">
-        <div class="px-4 py-8 rounded-lg lg:py-10"
-            style="border: 1px solid rgba(255,255,255,1);background-color: rgba(255,255,255,.5); backdrop-filter: blur(10px);">
-            <div class="font-title">
-                <h1 class="hero-title w-[234px] xs:w-[281px] md:w-[351px]">
-                    <span data-text="Halo, Saya Agven MR.">Halo, Saya Agven MR.</span>
-                </h1>
-                <h1 class="hero-title w-[236px] xs:w-[283px] md:w-[354px]">
-                    <span data-text="Seorang Programmer.">Seorang Programmer.</span>
-                </h1>
+    <section id="beranda" data-section class="py-24">
+        <div class="relative px-4 sm:container">
+            <div class="px-4 py-8 rounded-lg lg:py-10"
+                style="border: 1px solid rgba(255,255,255,1);background-color: rgba(255,255,255,.5); backdrop-filter: blur(10px);">
+                <div class="font-title">
+                    <h1 class="hero-title w-[234px] xs:w-[281px] md:w-[351px]">
+                        <span data-text="Halo, Saya Agven MR.">Halo, Saya Agven MR.</span>
+                    </h1>
+                    <h1 class="hero-title w-[236px] xs:w-[283px] md:w-[354px]">
+                        <span data-text="Seorang Programmer.">Seorang Programmer.</span>
+                    </h1>
+                </div>
+                <div class="md:w-2/4">
+                    <p class="mt-4 mb-8">
+                        Menyelesaikan permasalahan dengan
+                        <strong class="text-bold">CODING</strong>
+                        adalah suatu <strong class="text-bold">KESENANGAN</strong>
+                        tersendiri untuk <strong class="text-bold">SAYA.</strong>
+                    </p>
+                    <a href="#" class="button">Hubungi Saya</a>
+                </div>
+                <img class="hidden md:block md:absolute md:-bottom-20 md:right-0 md:w-72 lg:w-96 lg:-bottom-24"
+                    src="dist/img/profile.png" alt="">
             </div>
-            <div class="md:w-2/4">
-                <p class="mt-4 mb-8">
-                    Menyelesaikan permasalahan dengan
-                    <strong class="text-bold">CODING</strong>
-                    adalah suatu <strong class="text-bold">KESENANGAN</strong>
-                    tersendiri untuk <strong class="text-bold">SAYA.</strong>
-                </p>
-                <a href="#" class="button">Hubungi Saya</a>
-            </div>
-            <img class="hidden md:block md:absolute md:-bottom-20 md:right-0 md:w-72 lg:w-96 lg:-bottom-24"
-                src="dist/img/profile.png" alt="">
         </div>
-    </div>
+    </section>
 
     <!-- About Section -->
-    <div id="tentang" class="p-4 sm:container md:mt-8">
-        <div class="font-title flex items-center coba">
-            <div class="effect-title"></div>
-            <h2 class="general-title active relative text-dark text-xl xs:text-2xl md:text-3xl">Tentang</h2>
+    <section id="tentang" data-section class="py-24">
+        <div data-section class="px-4 sm:container">
+            <div class="font-title flex items-center coba">
+                <div class="effect-title"></div>
+                <h2 class="general-title active relative text-dark text-xl xs:text-2xl md:text-3xl">Tentang</h2>
+            </div>
+            <div class="mt-4 flex flex-col md:flex-row gap-4">
+                <p>
+                    Saya <strong class="text-bold">Agven Muharis Rifqi</strong> merupakan seorang <strong
+                        class="text-bold">Web
+                        Programmer</strong>
+                </p>
+                <p>
+                    Halo
+                </p>
+            </div>
         </div>
-        <div class="mt-4 flex flex-col md:flex-row gap-4">
-            <p>
-                Saya <strong class="text-bold">Agven Muharis Rifqi</strong> merupakan seorang <strong
-                    class="text-bold">Web
-                    Programmer</strong>
-            </p>
-            <p>
-                Halo
-            </p>
-        </div>
-    </div>
+    </section>
 
     <!-- Portofolio Section -->
-    <div id="portofolio" class="py-6">
-        <div class="p-4 sm:container md:mt-8">
+    <section id="portofolio" data-section class="py-24">
+        <div class="px-4 sm:container">
             <div class="font-title flex items-center coba">
                 <div class="effect-title"></div>
                 <h2 class="general-title relative text-dark text-xl xs:text-2xl md:text-3xl">Portofolio</h2>
@@ -292,36 +285,38 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Klien Section -->
-    <div id="klien" class="px-4 py-5 sm:container md:mt-8">
-        <div class="font-title flex items-center coba">
-            <div class="effect-title"></div>
-            <h2 class="general-title relative text-dark text-xl xs:text-2xl md:text-3xl">Klien</h2>
+    <section id="klien" data-section class="py-24">
+        <div class="px-4 sm:container">
+            <div class="font-title flex items-center coba">
+                <div class="effect-title"></div>
+                <h2 class="general-title relative text-dark text-xl xs:text-2xl md:text-3xl">Klien</h2>
+            </div>
+            <div class="mt-4 flex justify-between">
+                <div class="img-klien my-5">
+                    <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
+                </div>
+                <div class="img-klien my-5">
+                    <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
+                </div>
+                <div class="img-klien my-5">
+                    <img src="dist/img/logo-AAM.png" alt="Adhitya Asha Medika">
+                </div>
+                <div class="img-klien my-5">
+                    <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
+                </div>
+                <div class="img-klien my-5">
+                    <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
+                </div>
+            </div>
         </div>
-        <div class="mt-4 flex justify-between">
-            <div class="img-klien my-5">
-                <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
-            </div>
-            <div class="img-klien my-5">
-                <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
-            </div>
-            <div class="img-klien my-5">
-                <img src="dist/img/logo-AAM.png" alt="Adhitya Asha Medika">
-            </div>
-            <div class="img-klien my-5">
-                <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
-            </div>
-            <div class="img-klien my-5">
-                <img src="dist/img/logo-ME.png" alt="Agven Muharis Rifqi">
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- Kontak Section -->
-    <div id="kontak" class="bg-white py-12">
-        <div class="p-4 sm:container">
+    <section id="kontak" data-section class="py-24" style="background-color: rgba(255,255,255,.2);">
+        <div class="px-4 sm:container">
             <div class="font-title flex items-center coba">
                 <div class="effect-title"></div>
                 <h2 class="general-title white relative text-dark text-xl xs:text-2xl md:text-3xl">Kontak</h2>
@@ -408,10 +403,10 @@
                 </form>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer Section -->
-    <div class="bg-slate-800">
+    <div class="bg-dark">
         <div class="p-4 sm:container">
             <p class="text-center text-white">
                 Created By Agven Muharis Rifqi
@@ -508,38 +503,59 @@
         }
 
         // Navigation
-        const allNav = [...document.querySelectorAll(".nav-item")]
+        const allNav = [...document.querySelectorAll(".nav-item a")];
         allNav.forEach(elem => {
-            elem.addEventListener("click", () => {
-                elem.classList.toggle("active");
-                elem.classList.contains
+            elem.addEventListener("click", (e) => {
+                allNav.forEach(nav => {
+                    nav.classList.remove("active");
+                })
+                elem.classList.add("active");
             })
         });
 
         // Toggle Navigation
-        const toggleNav = document.getElementById("nav_toggle");
+        const toggleNav = document.getElementById("nav_toggle"); //Get element toggle nav
+        const navBrand = document.querySelector(".nav-brand"); //Get element navbar brand
+        const toggle = [...document.querySelectorAll(".nav-toggle span")]; //Get component toggle nav mobile
+        const navLink = [...document.querySelectorAll(".nav-item a")]; //Get element navbar link
         toggleNav.addEventListener("click", (e) => {
-            toggleNav.parentElement.parentElement.classList.toggle("bg-dark");
-            toggleNav.classList.toggle("active")
-            let toggle = [...document.querySelectorAll(".nav-toggle span")];
+            if (toggleNav.classList.contains("active")) {
+                toggleNav.classList.remove("active"); //Remove active class
+                navBrand.className = navBrand.className.replace(/white/, "dark"); //Change text white to dark
+            } else {
+                toggleNav.classList.add("active"); //Add active class
+                navBrand.className = navBrand.className.replace(/dark/, "white"); //Change text dark to white
+            }
             toggle.forEach(elem => {
                 if (elem.classList.contains("active")) {
-                    elem.classList.remove("active");
-                    elem.classList.add("nonactive");
+                    elem.classList.remove("active"); //Remove active class
+                    elem.classList.add("nonactive"); //Add nonactive class
                 } else {
-                    elem.classList.remove("nonactive");
-                    elem.classList.add("active");
+                    elem.classList.remove("nonactive"); //Remove nonactive class
+                    elem.classList.add("active"); //Add active class
                 }
+            });
+            navLink.forEach(link => {
+                link.addEventListener("click", () => {
+                    toggleNav.classList.remove("active");
+                    navBrand.className = navBrand.className.replace(/white/, "dark");
+                    toggle.forEach(tg => {
+                        tg.classList.remove("active"); //Remove active class
+                        tg.classList.add("nonactive"); //Add nonactive class
+                    });
+                })
             })
         });
 
         // Nav On Scroll
-        const navbar = document.getElementById("navbar");
+        const navbar = document.getElementById("navbar"); //Get navbar container
         const navScroll = () => {
             if (window.pageYOffset > navbar.offsetTop) {
-                navbar.classList.add("navfix")
+                navbar.style.boxShadow = '0px 1px 5px rgb(0,0,0,.3)';
+                navbar.style.backgroundColor = '#FFFFFF';
             } else {
-                navbar.classList.remove("navfix")
+                navbar.style.boxShadow = 'none';
+                navbar.style.backgroundColor = 'transparent';
             }
         }
 
@@ -550,6 +566,7 @@
         //     }
         // }
 
+        //Call function when window on scroll
         window.onscroll = () => {
             effectTitle();
             navScroll();

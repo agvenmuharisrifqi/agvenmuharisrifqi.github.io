@@ -6,7 +6,8 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Style Text*/
+/* Style General*/
+
 .font-title {
     font-family: 'Alfa Slab One', cursive;
 }
@@ -51,7 +52,7 @@ html {
 
 /* Navigation Style */
 .nav-brand {
-    @apply  font-title text-lg text-dark mr-10;
+    @apply  font-title text-lg mr-10;
     transition: all 1s;
 }
 .nav-item:hover a {
@@ -160,6 +161,10 @@ html {
     100% {
         transform: translateY(0);
     }
+}
+
+.nav-lists {
+    @apply hidden cursor-pointer md:flex;
 }
 
 /* Style Hero Section */
