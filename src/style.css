@@ -174,7 +174,7 @@ html {
     color: #4b5563;
 }
 
-.nav-item.active::after {
+.nav-item a.active::after {
     content: "";
     position: absolute;
     bottom: -.5rem;
@@ -185,7 +185,7 @@ html {
     background-color: #4D77FF;
 }
 
-.nav-item:hover::after {
+.nav-item:hover a::after {
     content: "";
     position: absolute;
     bottom: -.5rem;
@@ -195,6 +195,10 @@ html {
     border-radius: .5rem;
     background-color: #4D77FF;
     animation: animateNav .5s;
+}
+
+.nav-item a.active {
+    @apply text-link;
 }
 
 @keyframes animateNav {
@@ -349,4 +353,16 @@ html {
 .button-full:active {
     box-shadow: inset 0 1.5em 0 0 #0E185F,
                 inset 0 -1.5em 0 0 #0E185F; 
+}
+
+/* Klien Style */
+.img-klien img {
+    height: 50px;
+    filter: grayscale(100);
+    transition: all .4s ease-in-out;
+}
+
+.img-klien:hover img {
+    filter: none;
+    transform: scale(1.15);
 }
