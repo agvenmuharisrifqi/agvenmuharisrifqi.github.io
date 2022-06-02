@@ -333,15 +333,19 @@ html {
 }
 
 /* Style Button */
+.button-nav {
+    @apply bg-link rounded text-white;
+    padding: 10px 20px;
+    transition: box-shadow .15s;
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5);
+}
 .button, .button-full {
-    @apply py-3 px-4 rounded relative;
-    color: #FFFFFF;
-    background-color: #4D77FF;
+    @apply py-3 px-4 rounded relative bg-link text-white;
     transition: box-shadow .15s;
     box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5);
 }
 
-.button:hover, .button-full:hover {
+.button:hover, .button-full:hover, .button-nav:hover {
     background-color: #7493f7;
 }
 

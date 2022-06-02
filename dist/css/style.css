@@ -1234,20 +1234,33 @@ html {
 
 /* Style Button */
 
-.button, .button-full {
-  position: relative;
+.button-nav {
   border-radius: 0.25rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  color: #FFFFFF;
-  background-color: #4D77FF;
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 119 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  padding: 10px 20px;
   transition: box-shadow .15s;
   box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5);
 }
 
-.button:hover, .button-full:hover {
+.button, .button-full {
+  position: relative;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 119 255 / var(--tw-bg-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition: box-shadow .15s;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5);
+}
+
+.button:hover, .button-full:hover, .button-nav:hover {
   background-color: #7493f7;
 }
 
